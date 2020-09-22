@@ -11,7 +11,10 @@ namespace CapiMotors.Models
         public int Id { get; set; }
 
   
-        public ApplicationUser MyProperty { get; set; }
+        public ApplicationUser Seller { get; set; }
+
+        [Required]
+        public string SellerId { get; set; }
 
         public string Make { get; set; }
 
