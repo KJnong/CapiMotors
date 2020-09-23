@@ -1,0 +1,23 @@
+﻿@model IEnumerable<CapiMotors.Models.Vehicle>
+
+@{
+    ViewData["Title"] = "View";
+}
+
+<h1>View</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+@foreach (var vehicle in Model)
+{
+<ul>
+    <li>
+        @vehicle.Make
+    </li>
+    <li>
+        @vehicle.Model
+    </li>
+</ul>
+<img src="~/images/@vehicle.ImageName" />
+}

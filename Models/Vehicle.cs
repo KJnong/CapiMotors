@@ -30,6 +30,6 @@ namespace CapiMotors.Models
 
         public bool SunRoof { get; set; }
 
-        public string ImagePath { get; set; }
+        public string ImageName { get; set; }
     }
 }

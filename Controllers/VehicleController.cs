@@ -60,7 +60,7 @@ namespace CapiMotors.Controllers
         {
             if (ModelState.IsValid)
             {
-                string filePath = null;
+                string uniqueFileName = null;
                 var userId = userManager.GetUserId(HttpContext.User);
 
                 if (form.Image != null)
@@ -68,9 +68,9 @@ namespace CapiMotors.Controllers
                     string uploadsFolder = Path.Combine(hostingEnvironment.WebRootPath + "\\images");
 
                     //for unique fileName
-                    string uniqueFileName = Guid.NewGuid().ToString() + "_" + form.Image.FileName;
+                    uniqueFileName = Guid.NewGuid().ToString() + "_" + form.Image.FileName;
 
-                    filePath = Path.Combine(uploadsFolder , uniqueFileName);
+                    var filePath = Path.Combine(uploadsFolder , uniqueFileName);
 
                     //copying uploaded image to image folder
                     form.Image.CopyTo(new FileStream(filePath, FileMode.Create));
@@ -85,7 +85,7 @@ namespace CapiMotors.Controllers
                     PreviouslyOwned = form.PreviouslyOwned,
                     TowBar = form.TowBar,
                     SunRoof = form.SunRoof,
-                    ImagePath = filePath,
+                    ImageName = uniqueFileName,
                     SellerId = userId
                 };
 
@@ -93,7 +93,7 @@ namespace CapiMotors.Controllers
                 unitOfWork.Complete();
             }
 
-            return View();
+            return RedirectToAction("Index", "Home");
         }
 
         // GET: VehileController/Edit/5

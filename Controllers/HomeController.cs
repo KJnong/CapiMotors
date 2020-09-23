@@ -6,21 +6,26 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using CapiMotors.Models;
+using CapiMotors.Data.Interfaces;
 
 namespace CapiMotors.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IVehicleRepository vehicleRepository;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IVehicleRepository vehicleRepository)
         {
             _logger = logger;
+            this.vehicleRepository = vehicleRepository;
         }
 
         public IActionResult Index()
         {
-            return View();
+            var vehicles = vehicleRepository.GetAllVehicles();
+
+            return View("ListedVehicles", vehicles);
         }
 
         public IActionResult Privacy()
