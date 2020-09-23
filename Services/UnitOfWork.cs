@@ -12,12 +12,9 @@ namespace CapiMotors.Services
     {
         private readonly ApplicationDbContext _context;
 
-        public IVehicleRepository VehicleRepository { get; private set; }
-
         public UnitOfWork(ApplicationDbContext context)
         {
             _context = context;
-            VehicleRepository = new VehicleRepository(_context);
         }
 
         public void Complete()

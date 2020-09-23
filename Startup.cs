@@ -15,6 +15,7 @@ using Microsoft.Extensions.Hosting;
 using CapiMotors.Models;
 using CapiMotors.Data.Interfaces;
 using CapiMotors.Services;
+using CapiMotors.Services.Repositories;
 
 namespace CapiMotors
 {
@@ -37,6 +38,8 @@ namespace CapiMotors
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
+            services.AddTransient<IVehicleRepository, VehicleRepository>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
         }
 
