@@ -4,20 +4,15 @@
     ViewData["Title"] = "View";
 }
 
-<h1>View</h1>
+<div class="sale">
+    @foreach (var vehicle in Model)
+    {
+        <div class="card container" style="width: 18rem;">
+            <img class="card-img-top" src="~/images/@vehicle.ImageName" alt="Card image cap">
+            <div class="card-body">
+                <p class="card-text">@vehicle.Make @vehicle.Model</p>
+            </div>
+        </div>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-@foreach (var vehicle in Model)
-{
-<ul>
-    <li>
-        @vehicle.Make
-    </li>
-    <li>
-        @vehicle.Model
-    </li>
-</ul>
-<img src="~/images/@vehicle.ImageName" />
-}
+    }
+</div>
