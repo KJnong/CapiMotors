@@ -20,6 +20,8 @@ namespace CapiMotors.Models
 
         public string Model { get; set; }
 
+        public decimal Price { get; set; }
+
         public DateTime Date { get; set; }
 
         public string Colour { get; set; }

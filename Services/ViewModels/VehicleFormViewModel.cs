@@ -17,6 +17,8 @@ namespace CapiMotors.Services.ViewModels
         [Required]
         public string Model { get; set; }
 
+        public decimal Price { get; set; }
+
         [Required]
         public DateTime Date { get; set; }
 
