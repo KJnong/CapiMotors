@@ -10,6 +10,7 @@ namespace CapiMotors.Data
     public class ApplicationDbContext : IdentityDbContext
     {
         public DbSet<Vehicle> Vehicles { get; set; }
+        public DbSet<Images> Images { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)

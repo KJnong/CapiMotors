@@ -176,8 +176,8 @@ C:\Projects\CapiMotors\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspa
 C:\Projects\CapiMotors\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Projects\CapiMotors\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Projects\CapiMotors\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\VehicleForm.cshtml.g.cs
+C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\Razor\Views\Home\ListedVehicles.cshtml.g.cs
 C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\CapiMotors.csproj.CoreCompileInputs.cache
 C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\CapiMotors.MvcApplicationPartsAssemblyInfo.cs
 C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\CapiMotors.MvcApplicationPartsAssemblyInfo.cache
-C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\VehicleForm.cshtml.g.cs
-C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\Razor\Views\Home\ListedVehicles.cshtml.g.cs

@@ -41,6 +41,7 @@ namespace CapiMotors
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IVehicleRepository, VehicleRepository>();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
+            services.AddTransient<IImagesRepositories, ImagesRepositories >();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

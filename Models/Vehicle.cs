@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -15,6 +17,8 @@ namespace CapiMotors.Models
 
         [Required]
         public string SellerId { get; set; }
+
+        public List<Images> Images { get; set; }
 
         public string Make { get; set; }
 
@@ -32,6 +36,5 @@ namespace CapiMotors.Models
 
         public bool SunRoof { get; set; }
 
-        public string ImageName { get; set; }
     }
 }

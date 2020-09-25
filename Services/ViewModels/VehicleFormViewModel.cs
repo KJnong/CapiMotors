@@ -35,7 +35,7 @@ namespace CapiMotors.Services.ViewModels
         public bool SunRoof { get; set; }
 
         [Required]
-        public IFormFile Image { get; set; }
+        public List<IFormFile> Images { get; set; }
 
         
     }

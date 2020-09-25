@@ -20,16 +20,19 @@ namespace CapiMotors.Controllers
         private readonly UserManager<ApplicationUser> userManager;
         private readonly IVehicleRepository vehicleRepository;
         private readonly IUnitOfWork unitOfWork;
+        private readonly IImagesRepositories imagesRepositories;
 
         public VehicleController(IWebHostEnvironment hostingEnvironment,
             UserManager<ApplicationUser> userManager,
             IVehicleRepository vehicleRepository,
-            IUnitOfWork unitOfWork)
+            IUnitOfWork unitOfWork,
+            IImagesRepositories imagesRepositories)
         {
             this.hostingEnvironment = hostingEnvironment;
             this.userManager = userManager;
             this.vehicleRepository = vehicleRepository;
             this.unitOfWork = unitOfWork;
+            this.imagesRepositories = imagesRepositories;
         }
 
 
@@ -60,20 +63,38 @@ namespace CapiMotors.Controllers
         {
             if (ModelState.IsValid)
             {
-                string uniqueFileName = null;
                 var userId = userManager.GetUserId(HttpContext.User);
+                List<string> imagesFromForm = new List<string>();
 
-                if (form.Image != null)
+                if (form.Images != null)
                 {
-                    string uploadsFolder = Path.Combine(hostingEnvironment.WebRootPath + "\\images");
+                    foreach (var image in form.Images)
+                    {
+                        imagesFromForm.Add(image.FileName);
 
-                    //for unique fileName
-                    uniqueFileName = Guid.NewGuid().ToString() + "_" + form.Image.FileName;
 
-                    var filePath = Path.Combine(uploadsFolder , uniqueFileName);
+                        string uploadsFolder = Path.Combine(hostingEnvironment.WebRootPath + "\\images");
 
-                    //copying uploaded image to image folder
-                    form.Image.CopyTo(new FileStream(filePath, FileMode.Create));
+                        //for unique fileName
+                        string uniqueFileName = Guid.NewGuid().ToString() + "_" + image.FileName;
+
+                        var filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                        //copying uploaded image to image folder
+                        image.CopyTo(new FileStream(filePath, FileMode.Create));
+                    }
+
+                }
+                List<Images> imagesObject = new List<Images>();
+
+                foreach(string imageName in imagesFromForm)
+                {
+                    Images images = new Images
+                    {
+                        ImageName = imageName
+                    };
+
+                    imagesObject.Add(images);
                 }
 
                 Vehicle vehicle = new Vehicle
@@ -85,9 +106,12 @@ namespace CapiMotors.Controllers
                     PreviouslyOwned = form.PreviouslyOwned,
                     TowBar = form.TowBar,
                     SunRoof = form.SunRoof,
-                    ImageName = uniqueFileName,
-                    SellerId = userId
+                    SellerId = userId,
+                    Price = form.Price,
+                    Images = imagesObject
                 };
+
+                
 
                 vehicleRepository.AddVehicle(vehicle);
                 unitOfWork.Complete();
