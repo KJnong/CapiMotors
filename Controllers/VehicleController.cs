@@ -43,9 +43,9 @@ namespace CapiMotors.Controllers
         }
 
         // GET: VehileController/Details/5
-        public ActionResult Details(int id)
+        public ActionResult Details()
         {
-            return View();
+            return View("VehicleInfoModel");
         }
 
         // GET: VehileController/Create
@@ -110,9 +110,7 @@ namespace CapiMotors.Controllers
                     Price = form.Price,
                     Images = imagesObject
                 };
-
-                
-
+              
                 vehicleRepository.AddVehicle(vehicle);
                 unitOfWork.Complete();
             }

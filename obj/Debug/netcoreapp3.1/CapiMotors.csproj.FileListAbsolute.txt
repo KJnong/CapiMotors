@@ -181,3 +181,4 @@ C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\Razor\Views\Home\ListedVehicles.c
 C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\CapiMotors.csproj.CoreCompileInputs.cache
 C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\CapiMotors.MvcApplicationPartsAssemblyInfo.cs
 C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\CapiMotors.MvcApplicationPartsAssemblyInfo.cache
+C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\VehicleInfoModel.cshtml.g.cs

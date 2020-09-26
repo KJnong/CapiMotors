@@ -11,7 +11,8 @@ namespace CapiMotors.Models
     {
         public int Id { get; set; }
 
-        [Required]
+        public Vehicle Vehicle { get; set; }
+
         public int VehicleId { get; set; }
 
         public string ImageName { get; set; }

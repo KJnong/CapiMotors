@@ -296,7 +296,7 @@ namespace CapiMotors.Data.Migrations
 
             modelBuilder.Entity("CapiMotors.Models.Images", b =>
                 {
-                    b.HasOne("CapiMotors.Models.Vehicle", null)
+                    b.HasOne("CapiMotors.Models.Vehicle", "Vehicle")
                         .WithMany("Images")
                         .HasForeignKey("VehicleId")
                         .OnDelete(DeleteBehavior.Cascade)
