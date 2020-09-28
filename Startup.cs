@@ -40,7 +40,7 @@ namespace CapiMotors
             services.AddRazorPages();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IVehicleRepository, VehicleRepository>();
-            services.AddTransient<IUnitOfWork, UnitOfWork>();
+            services.AddTransient<INotificationRepository, NotificationRepository>();
             services.AddTransient<IImagesRepositories, ImagesRepositories >();
         }
 

@@ -11,6 +11,7 @@ namespace CapiMotors.Data
     {
         public DbSet<Vehicle> Vehicles { get; set; }
         public DbSet<Images> Images { get; set; }
+        public DbSet<Notification> Notifications { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
