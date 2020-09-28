@@ -18,7 +18,9 @@ namespace CapiMotors.Models
         [Required]
         public string SellerId { get; set; }
 
-        public List<Images> Images { get; set; }
+        public List<Images> OtherImages { get; set; }
+
+        public string MainImageName { get; set; }
 
         public string Make { get; set; }
 

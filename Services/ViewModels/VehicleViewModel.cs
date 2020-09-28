@@ -9,5 +9,6 @@ namespace CapiMotors.Services.ViewModels
     public class VehicleViewModel
     {
         public List<Vehicle> vehicles{ get; set; }
+        public string ImageName { get; set; }
     }
 }

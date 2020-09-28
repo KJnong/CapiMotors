@@ -8,12 +8,12 @@
         @foreach (var vehicle in Model)
         {
         <div class="card container" style="width: 18rem;">
-            <img class="card-img-top" src="" alt="Card image cap">
+            <img class="card-img-top" src="~/images/@vehicle.MainImageName" alt="Card image cap">
             <div class="card-body">
                 <p class="card-text">@vehicle.Make @vehicle.Model</p>
                 <p>R @vehicle.Price</p>
             </div>
-            <button type="button" class="btn btn-info">Vehicle details</button>
+            @Html.ActionLink("More Details", "Details", "Vehicle", new {vehicle.Id})
         </div>
         }
     </div>

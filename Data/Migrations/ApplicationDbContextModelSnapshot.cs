@@ -45,6 +45,9 @@ namespace CapiMotors.Data.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("datetime2");
 
+                    b.Property<string>("MainImageName")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Make")
                         .HasColumnType("nvarchar(max)");
 
@@ -290,7 +293,7 @@ namespace CapiMotors.Data.Migrations
             modelBuilder.Entity("CapiMotors.Models.Images", b =>
                 {
                     b.HasOne("CapiMotors.Models.Vehicle", "Vehicle")
-                        .WithMany("Images")
+                        .WithMany("OtherImages")
                         .HasForeignKey("VehicleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

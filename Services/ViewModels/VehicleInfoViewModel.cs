@@ -10,7 +10,7 @@ namespace CapiMotors.Services.ViewModels
     public class VehicleInfoViewModel
     {
         public Vehicle Vehicle { get; set; }
-        public string[] ImagesName { get; set; }
+        public List<string> ImagesNames { get; set; }
 
         [Required]
         public int Phone { get; set; }

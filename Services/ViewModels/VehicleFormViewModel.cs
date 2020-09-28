@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
@@ -35,8 +36,14 @@ namespace CapiMotors.Services.ViewModels
         public bool SunRoof { get; set; }
 
         [Required]
-        public List<IFormFile> Images { get; set; }
+        [DisplayName("More Images")]
+        public List<IFormFile> OtherImages { get; set; }
 
-        
+
+        [Required]
+        [DisplayName("Cover Image")]
+        public IFormFile MainImage { get; set; }
+
+
     }
 }
