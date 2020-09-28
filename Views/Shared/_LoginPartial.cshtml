@@ -6,6 +6,12 @@
         @if (SignInManager.IsSignedIn(User))
         {
 
+            <li>
+                <span class="material-icons">
+                    email
+                </span>
+                <span class="message-count">(2)</span>
+            </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Hello @User.Identity.Name!
