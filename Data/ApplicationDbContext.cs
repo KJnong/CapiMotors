@@ -20,10 +20,7 @@ namespace CapiMotors.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<Images>()
-            .HasOne(s => s.Vehicle)
-            .WithMany(g => g.Images)
-            .HasForeignKey(s => s.VehicleId);
-
+            .HasKey(c => new { c.VehicleId, c.ImageName });
             base.OnModelCreating(builder);
         }
     }

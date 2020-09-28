@@ -45,7 +45,7 @@ namespace CapiMotors.Controllers
         // GET: VehileController/Details/5
         public ActionResult Details()
         {
-            return View("VehicleInfoModel");
+            return View("VehicleInfo");
         }
 
         // GET: VehileController/Create

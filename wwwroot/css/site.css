@@ -101,3 +101,20 @@ body {
     height:15vw;
     object-fit:contain;
 }
+
+/*info page styling*/
+.info-container{
+    justify-content:space-between;
+    display:flex;
+    flex-wrap:wrap
+ 
+
+
+}
+
+.image-slider {
+    flex-basis: 50%;
+}
+
+.details-form{
+}

@@ -9,8 +9,6 @@ namespace CapiMotors.Models
 {
     public class Images
     {
-        public int Id { get; set; }
-
         public Vehicle Vehicle { get; set; }
 
         public int VehicleId { get; set; }

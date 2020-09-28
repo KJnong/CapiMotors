@@ -21,20 +21,13 @@ namespace CapiMotors.Data.Migrations
 
             modelBuilder.Entity("CapiMotors.Models.Images", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("ImageName")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("VehicleId")
                         .HasColumnType("int");
 
-                    b.HasKey("Id");
+                    b.Property<string>("ImageName")
+                        .HasColumnType("nvarchar(450)");
 
-                    b.HasIndex("VehicleId");
+                    b.HasKey("VehicleId", "ImageName");
 
                     b.ToTable("Images");
                 });
