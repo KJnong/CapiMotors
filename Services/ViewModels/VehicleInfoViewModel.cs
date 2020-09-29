@@ -20,5 +20,7 @@ namespace CapiMotors.Services.ViewModels
 
         [Required]
         public string Email { get; set; }
+
+        public int VehicleId { get; set; }
     }
 }

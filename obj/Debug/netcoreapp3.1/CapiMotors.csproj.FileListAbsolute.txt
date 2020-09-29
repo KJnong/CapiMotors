@@ -182,3 +182,4 @@ C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\CapiMotors.MvcApplicationPartsAss
 C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\CapiMotors.MvcApplicationPartsAssemblyInfo.cache
 C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\VehicleInfo.cshtml.g.cs
 C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\Razor\Views\Shared\ListedVehicles.cshtml.g.cs
+C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\UserVehicles.cshtml.g.cs

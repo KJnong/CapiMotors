@@ -46,6 +46,8 @@ namespace CapiMotors.Controllers
         public ActionResult Details(int id)
         {
             var imagesFromDatabase = imagesRepositories.Images(id);
+            var vehicle = vehicleRepository.GetVehicle(id);
+            
             List<string> images = new List<string>();
 
             foreach(var image in imagesFromDatabase)
@@ -55,7 +57,8 @@ namespace CapiMotors.Controllers
 
             VehicleInfoViewModel vehicleInfoViewModel = new VehicleInfoViewModel
             {
-                ImagesNames = images
+                ImagesNames = images,
+                Vehicle = vehicle
             };
             
             return View("VehicleInfo", vehicleInfoViewModel);
@@ -67,7 +70,7 @@ namespace CapiMotors.Controllers
 
             var vehicles = vehicleRepository.GetSellerVehicles(userId);
 
-            return View("ListedVehicles", vehicles);
+            return View("UserVehicles", vehicles);
         }
 
         // GET: VehileController/Create

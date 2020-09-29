@@ -6,9 +6,59 @@
 
     <div class="info-container">
         <div class=" image-slider">
+
+            <button class="btn btn-primary" data-target="#contactModal" data-toggle="modal">Inquire</button>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="modal" id="contactModal" tabindex="-1">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form asp-controller="Notification" asp-action="AddNotification" method="post">
+                                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                                            <div class="form-group">
+                                                <label asp-for="Name" class="control-label"></label>
+                                                <input asp-for="Name" class="form-control" />
+                                                <span asp-validation-for="Name" class="text-danger"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label asp-for="Email" class="control-label"></label>
+                                                <input asp-for="Email" class="form-control" />
+                                                <span asp-validation-for="Email" class="text-danger"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label asp-for="Phone" class="control-label"></label>
+                                                <input asp-for="Phone" class="form-control" />
+                                                <span asp-validation-for="Phone" class="text-danger"></span>
+                                            </div>
+                                            <div class="form-group" style="display:none">
+                                                <input asp-for="VehicleId" value="@Model.Vehicle.Id" class="form-control" />
+                                            </div>
+
+                                            <div class="modal-footer">
+                                                <button class="btn btn-primary">Contact the Dealer</button>
+                                                <button class="btn btn-primary" data-dismiss="modal">Close</button>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <br />
+
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
-                     @foreach (string img in Model.ImagesNames)
+                    @foreach (string img in Model.ImagesNames)
                     {
                         if (Model.ImagesNames.IndexOf(img) == 0)
                         {
@@ -34,33 +84,55 @@
                     <span class="sr-only">Next</span>
                 </a>
             </div>
-        </div>
-        <div class="details-form">
-            <div class="row">
-                <div class="col-md-4">
-                    <form asp-controller="Vehicle" asp-action="Contact" method="post">
-                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                        <div class="form-group">
-                            <label asp-for="Name" class="control-label"></label>
-                            <input asp-for="Name" class="form-control" />
-                            <span asp-validation-for="Name" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="Email" class="control-label"></label>
-                            <input asp-for="Email" class="form-control" />
-                            <span asp-validation-for="Email" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <label asp-for="Phone" class="control-label"></label>
-                            <input asp-for="Phone" class="form-control" />
-                            <span asp-validation-for="Phone" class="text-danger"></span>
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" value="Create" class="btn btn-primary" />
-                        </div>
-                    </form>
-                </div>
-            </div>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            Make
+                        </th>
+                        <th>
+                            Model
+                        </th>
+                        <th>
+                            Colour
+                        </th>
+                        <th>
+                            Price
+                        </th>
+                        <th>
+                            Towbar
+                        </th>
+                        <th>
+                            SunRoof
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            @Model.Vehicle.Make
+                        </td>
+                        <td>
+                            @Model.Vehicle.Model
+                        </td>
+                        <td>
+                            @Model.Vehicle.Colour
+                        </td>
+                        <td>
+                            @Model.Vehicle.Price
+                        </td>
+                        <td>
+                            @Model.Vehicle.TowBar
+                        </td>
+                        <td>
+                            @Model.Vehicle.SunRoof
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
         </div>
     </div>
 
