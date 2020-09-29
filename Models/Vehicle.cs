@@ -38,5 +38,7 @@ namespace CapiMotors.Models
 
         public bool SunRoof { get; set; }
 
+        public bool IsCancelled { get; set; }
+
     }
 }

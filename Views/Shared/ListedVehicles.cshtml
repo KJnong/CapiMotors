@@ -9,11 +9,12 @@
         {
         <div class="card container" style="width: 18rem;">
             <img class="card-img-top" src="~/images/@vehicle.MainImageName" alt="Card image cap">
+            <p class="card-text">@vehicle.Make @vehicle.Model</p>
+            <p>R @vehicle.Price</p>
             <div class="card-body">
-                <p class="card-text">@vehicle.Make @vehicle.Model</p>
-                <p>R @vehicle.Price</p>
+
             </div>
-            @Html.ActionLink("More Details", "Details", "Vehicle", new {vehicle.Id})
+            <a class="btn btn-info" asp-action="Details" asp-controller="Vehicle" asp-route-id="@vehicle.Id">Details</a>
         </div>
         }
     </div>

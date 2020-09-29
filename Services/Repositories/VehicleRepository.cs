@@ -44,5 +44,12 @@ namespace CapiMotors.Services.Repositories
         {
             _context.Remove(vehicle);
         }
+
+        public void Cancel(int id)
+        {
+            var vehicle = _context.Vehicles.Where(v => v.Id == id).FirstOrDefault();
+            vehicle.IsCancelled = false;
+
+        }
     }
 }

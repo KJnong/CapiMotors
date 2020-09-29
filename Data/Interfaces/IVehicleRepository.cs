@@ -10,5 +10,6 @@ namespace CapiMotors.Data.Interfaces
         Vehicle GetVehicle(int id);
         void AddVehicle(Vehicle vehicle);
         void RemoveVehicle(Vehicle vehicle);
+        void Cancel(int id);
     }
 }
