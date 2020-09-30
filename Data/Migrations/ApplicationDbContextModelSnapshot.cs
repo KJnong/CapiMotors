@@ -334,7 +334,7 @@ namespace CapiMotors.Data.Migrations
             modelBuilder.Entity("CapiMotors.Models.Notification", b =>
                 {
                     b.HasOne("CapiMotors.Models.Vehicle", "Vehicle")
-                        .WithMany()
+                        .WithMany("notifications")
                         .HasForeignKey("VehicleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

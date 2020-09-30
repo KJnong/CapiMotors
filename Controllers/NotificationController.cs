@@ -12,10 +12,12 @@ namespace CapiMotors.Controllers
     public class NotificationController : Controller
     {
         private readonly INotificationRepository notificationRepository;
+        private readonly IUnitOfWork unitOfWork;
 
-        public NotificationController(INotificationRepository notificationRepository)
+        public NotificationController(INotificationRepository notificationRepository, IUnitOfWork unitOfWork)
         {
             this.notificationRepository = notificationRepository;
+            this.unitOfWork = unitOfWork;
         }
         public IActionResult AddNotification(VehicleInfoViewModel model)
         {
@@ -28,8 +30,16 @@ namespace CapiMotors.Controllers
             };
 
             notificationRepository.AddNotification(notification);
+            unitOfWork.Complete();
 
             return RedirectToAction("Index", "Home");
+        }
+
+        public IActionResult Notification(int id)
+        {
+            var notification = notificationRepository.GetNotifications(id);
+
+            return View(notification);
         }
     }
 }

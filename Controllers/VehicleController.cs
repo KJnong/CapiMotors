@@ -21,18 +21,21 @@ namespace CapiMotors.Controllers
         private readonly IVehicleRepository vehicleRepository;
         private readonly IUnitOfWork unitOfWork;
         private readonly IImagesRepositories imagesRepositories;
+        private readonly INotificationRepository notificationRepository;
 
         public VehicleController(IWebHostEnvironment hostingEnvironment,
             UserManager<ApplicationUser> userManager,
             IVehicleRepository vehicleRepository,
             IUnitOfWork unitOfWork,
-            IImagesRepositories imagesRepositories)
+            IImagesRepositories imagesRepositories,
+            INotificationRepository notificationRepository)
         {
             this.hostingEnvironment = hostingEnvironment;
             this.userManager = userManager;
             this.vehicleRepository = vehicleRepository;
             this.unitOfWork = unitOfWork;
             this.imagesRepositories = imagesRepositories;
+            this.notificationRepository = notificationRepository;
         }
 
 

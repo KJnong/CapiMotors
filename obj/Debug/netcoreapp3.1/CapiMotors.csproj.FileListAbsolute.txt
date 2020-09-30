@@ -183,3 +183,4 @@ C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\UserVehicles.
 C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\CapiMotors.csproj.CoreCompileInputs.cache
 C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\CapiMotors.MvcApplicationPartsAssemblyInfo.cs
 C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\CapiMotors.MvcApplicationPartsAssemblyInfo.cache
+C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\Razor\Views\Notification\Notification.cshtml.g.cs

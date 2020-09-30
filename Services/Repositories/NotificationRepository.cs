@@ -1,6 +1,7 @@
 ﻿using CapiMotors.Data;
 using CapiMotors.Data.Interfaces;
 using CapiMotors.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,12 +17,16 @@ namespace CapiMotors.Services.Repositories
             this.context = context;
         }
 
-        public List<Notification> Notifications(int Id)
+        public List<Notification> GetNotifications(int id)
         {
-            var notification = context.Notifications.Where(n => n.VehicleId == Id).ToList();
 
-            return notification;
+            var notifications = context.Notifications.Where(v => v.VehicleId == id).ToList();
+
+
+
+            return notifications;
         }
+
 
         public void AddNotification(Notification notification)
         {

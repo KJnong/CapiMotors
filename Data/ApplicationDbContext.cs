@@ -23,6 +23,9 @@ namespace CapiMotors.Data
             builder.Entity<Images>()
             .HasKey(c => new { c.VehicleId, c.ImageName });
             base.OnModelCreating(builder);
+
+            builder.Entity<Vehicle>().HasMany(n => n.notifications).WithOne(v => v.Vehicle);
+           
         }
     }
 }

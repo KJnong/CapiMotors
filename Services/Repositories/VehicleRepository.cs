@@ -1,6 +1,7 @@
 ﻿using CapiMotors.Data;
 using CapiMotors.Data.Interfaces;
 using CapiMotors.Models;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,12 @@ namespace CapiMotors.Services.Repositories
         public List<Vehicle> GetSellerVehicles(string id)
         {
             var sale = _context.Vehicles.Where(v => v.SellerId == id).ToList();
+            return sale;
+        }
+
+        public List<Vehicle> GetSellerVehiclesWithNotifications(string id)
+        {
+            var sale = _context.Vehicles.Include(n => n.notifications).Where(v => v.SellerId == id).ToList();
             return sale;
         }
 

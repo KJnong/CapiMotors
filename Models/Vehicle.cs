@@ -20,6 +20,8 @@ namespace CapiMotors.Models
 
         public List<Images> OtherImages { get; set; }
 
+        public List<Notification> notifications { get; set; }
+
         public string MainImageName { get; set; }
 
         public string Make { get; set; }
