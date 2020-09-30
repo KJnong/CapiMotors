@@ -7,5 +7,6 @@ namespace CapiMotors.Data.Interfaces
     {
         void AddNotification(Notification notification);
         List<Notification> GetNotifications(int Id);
+        List<Notification> GetSellerNotifications(string userId);
     }
 }

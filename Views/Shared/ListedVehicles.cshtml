@@ -1,23 +1,35 @@
-﻿@model IEnumerable<CapiMotors.Models.Vehicle>
+﻿@model CapiMotors.Services.ViewModels.VehicleViewModel
 
 @{
     ViewData["Title"] = "View";
 }
 
-    <div class="sale">
-        @foreach (var vehicle in Model)
-        {
-        <div class="card  container" style="width: 18rem;">
-            <img class="card-img-top" src="~/images/@vehicle.MainImageName" alt="Card image cap">
-            <p class="card-text">@vehicle.Make @vehicle.Model</p>
-            <p>R @vehicle.Price</p>
-            <div class="card-body">
-
-            </div>
-            <a class="btn btn-info" asp-action="Details" asp-controller="Vehicle" asp-route-id="@vehicle.Id">Details</a>
+@using (Html.BeginForm("Search", "Gigs"))
+{
+    <div class="form-group search">
+        <div class="input-group" id="search">
+            @Html.TextBoxFor(a => a.Search, new { @class = "form-control", placeholder = "" })
+            <span class="input-group-addon">
+                <i class="glyphicon glyphicon-search"></i>
+            </span>
         </div>
-        }
     </div>
+}
+
+<div class="sale">
+    @foreach (var vehicle in Model.Vehicles)
+    {
+    <div class="card  container" style="width: 18rem;">
+        <img class="card-img-top" src="~/images/@vehicle.MainImageName" alt="Card image cap">
+        <p class="card-text">@vehicle.Make @vehicle.Model</p>
+        <p>R @vehicle.Price</p>
+        <a class="btn btn-info" asp-action="Details" asp-controller="Vehicle" asp-route-id="@vehicle.Id">Details</a>
+        <div class="card-body">
+
+        </div>
+    </div>
+    }
+</div>
 
 
 

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using CapiMotors.Models;
 using CapiMotors.Data.Interfaces;
+using CapiMotors.Services.ViewModels;
 
 namespace CapiMotors.Controllers
 {
@@ -24,8 +25,12 @@ namespace CapiMotors.Controllers
         public IActionResult Index()
         {
             var vehicles = vehicleRepository.GetAllVehicles();
+            VehicleViewModel model = new VehicleViewModel
+            {
+                Vehicles = vehicles
+            }; 
 
-            return View("ListedVehicles", vehicles);
+            return View("ListedVehicles", model);
         }
 
         public IActionResult Privacy()

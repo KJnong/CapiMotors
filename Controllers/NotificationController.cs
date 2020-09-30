@@ -26,7 +26,8 @@ namespace CapiMotors.Controllers
                 Name = model.Name,
                 Email = model.Email,
                 Numbers = model.Phone,
-                VehicleId = model.VehicleId
+                VehicleId = model.VehicleId,
+                SellerId = model.SellerId
             };
 
             notificationRepository.AddNotification(notification);

@@ -1,16 +1,17 @@
-﻿@model IEnumerable<CapiMotors.Models.Vehicle>
+﻿@model CapiMotors.Services.ViewModels.VehicleViewModel
 
 @{
     ViewData["Title"] = "View";
 }
 
 <div class="sale">
-    @foreach (var vehicle in Model)
+    @foreach (var vehicle in Model.Vehicles)
     {
     <div class="card card-index-page container" style="width: 18rem;">
         <a asp-action="Notification" asp-controller="Notification" asp-route-id="@vehicle.Id" class="material-icons">
             email
         </a>
+        <span class="message-count"><span class="digit">@Model.Notifications.Where(n => n.VehicleId == vehicle.Id).Count()</span></span>
         <img class="card-img-top" src="~/images/@vehicle.MainImageName" alt="Card image cap">
         <a class="btn btn-info" asp-action="Details" asp-controller="Vehicle" asp-route-id="@vehicle.Id">Details</a>
         <div class="card-body">

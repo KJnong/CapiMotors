@@ -71,9 +71,16 @@ namespace CapiMotors.Controllers
         {
             var userId = userManager.GetUserId(HttpContext.User);
 
+            var notifications = notificationRepository.GetSellerNotifications(userId);
             var vehicles = vehicleRepository.GetSellerVehicles(userId);
 
-            return View("UserVehicles", vehicles);
+            VehicleViewModel model = new VehicleViewModel
+            {
+                Notifications = notifications,
+                Vehicles = vehicles
+            };
+
+            return View("UserVehicles", model);
         }
 
         // GET: VehileController/Create

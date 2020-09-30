@@ -72,14 +72,12 @@ body {
 
 
 /*logo styling*/
-.logo{
-
+.logo {
     display: flex;
-    justify-content:center;
-    color:white;
-    background-color:darkslategrey;
-    font-weight:bold
-
+    justify-content: center;
+    color: white;
+    background-color: #032ed5;
+    font-weight: bold
 }
 
 .logo > span{
@@ -120,19 +118,22 @@ body {
     color: black
 }
 
-    .message-count {
-    position: relative;
-    top: -20px;
-    left:18px;
-    right: 14px;
-    width:20px;
-    height:20px;
-    border-radius:10px;
-    background-color:orange;
-    font-size:small;
-    color:white
-
+.message-count {
+position: relative;
+top: -20px;
+left:18px;
+right: 14px;
+width:20px;
+height:20px;
+border-radius:10px;
+background-color:orange;
+font-size:small;
+color:white;
+display:flex;
+justify-content:center
 }
+
+
 
 /*Admin vehicle card stylung*/
 .vehicle-buttons{
@@ -141,4 +142,20 @@ body {
 
 .card-index-page:hover .vehicle-buttons {
     display: block
+}
+
+/*Search input*/
+.search{
+    display:flex;
+    justify-content:center
+}
+
+#search {
+    width: 300px; 
+}
+
+.form-control {
+    font-size: 17px;
+    height: 44px;
+    border-radius: 14px;
 }

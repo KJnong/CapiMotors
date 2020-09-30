@@ -8,6 +8,6 @@ namespace CapiMotors.Models
 {
     public class ApplicationUser : IdentityUser
     {
-
+       
     }
 }

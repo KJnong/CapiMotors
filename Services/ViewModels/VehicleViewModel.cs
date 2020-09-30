@@ -8,7 +8,9 @@ namespace CapiMotors.Services.ViewModels
 {
     public class VehicleViewModel
     {
-        public List<Vehicle> vehicles{ get; set; }
-        List<Notification> notifications;
+        public List<Vehicle> Vehicles{ get; set; }
+        public List<Notification> Notifications { get; set; }
+        public string Search { get; set; }
+
     }
 }

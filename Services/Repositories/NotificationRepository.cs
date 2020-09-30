@@ -19,10 +19,14 @@ namespace CapiMotors.Services.Repositories
 
         public List<Notification> GetNotifications(int id)
         {
-
             var notifications = context.Notifications.Where(v => v.VehicleId == id).ToList();
 
+            return notifications;
+        }
 
+        public List<Notification> GetSellerNotifications(string userId)
+        {
+            var notifications = context.Notifications.Where(v => v.SellerId == userId).ToList();
 
             return notifications;
         }
