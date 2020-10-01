@@ -41,7 +41,7 @@ namespace CapiMotors
             services.AddTransient<IUnitOfWork, UnitOfWork>();
             services.AddTransient<IProductRepository, ProductRepository>();
             services.AddTransient<INotificationRepository, NotificationRepository>();
-            services.AddTransient<IImagesRepositories, ImagesRepositories >();
+            services.AddTransient<IImagesRepositories, ImagesRepositories>();
 
         }
 
@@ -69,13 +69,18 @@ namespace CapiMotors
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "Admin",
-                    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
+
+                endpoints.MapAreaControllerRoute(
+                    name: "AdminArea",
+                    areaName: "Admin",
+                    pattern: "Admin/{controller=Home}/{action=Index}/{id?}");
 
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                
             });
         }
     }
