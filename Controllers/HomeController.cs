@@ -14,9 +14,9 @@ namespace CapiMotors.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly IVehicleRepository vehicleRepository;
+        private readonly IProductRepository vehicleRepository;
 
-        public HomeController(ILogger<HomeController> logger, IVehicleRepository vehicleRepository)
+        public HomeController(ILogger<HomeController> logger, IProductRepository vehicleRepository)
         {
             _logger = logger;
             this.vehicleRepository = vehicleRepository;
@@ -24,10 +24,10 @@ namespace CapiMotors.Controllers
 
         public IActionResult Index()
         {
-            var vehicles = vehicleRepository.GetAllVehicles();
-            VehicleViewModel model = new VehicleViewModel
+            var vehicles = vehicleRepository.GetAllProducts();
+            ProductViewModel model = new ProductViewModel
             {
-                Vehicles = vehicles
+                Products = vehicles
             }; 
 
             return View("ListedVehicles", model);

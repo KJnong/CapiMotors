@@ -12,10 +12,10 @@ namespace CapiMotors.Controllers.ApiControllers
     [ApiController]
     public class VehicleController : ControllerBase
     {
-        private readonly IVehicleRepository vehicleRepository;
+        private readonly IProductRepository vehicleRepository;
         private readonly IUnitOfWork unitOfWork;
 
-        public VehicleController(IVehicleRepository vehicleRepository, IUnitOfWork unitOfWork)
+        public VehicleController(IProductRepository vehicleRepository, IUnitOfWork unitOfWork)
         {
             this.vehicleRepository = vehicleRepository;
             this.unitOfWork = unitOfWork;

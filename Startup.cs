@@ -39,9 +39,10 @@ namespace CapiMotors
             services.AddControllersWithViews();
             services.AddRazorPages();
             services.AddTransient<IUnitOfWork, UnitOfWork>();
-            services.AddTransient<IVehicleRepository, VehicleRepository>();
+            services.AddTransient<IProductRepository, ProductRepository>();
             services.AddTransient<INotificationRepository, NotificationRepository>();
             services.AddTransient<IImagesRepositories, ImagesRepositories >();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -69,9 +70,12 @@ namespace CapiMotors
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
+                    name: "Admin",
+                    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
+                endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
-                endpoints.MapRazorPages();
             });
         }
     }

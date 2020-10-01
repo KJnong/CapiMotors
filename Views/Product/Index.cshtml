@@ -1,0 +1,65 @@
+﻿@model CapiMotors.Services.ViewModels.ProductViewModel
+
+@{
+    ViewData["Title"] = "View";
+}
+
+<div class="sale">
+    @foreach (var product in Model.Products)
+    {
+    <div class="card card-index-page container" style="width: 18rem;">
+        <a asp-action="Notification" asp-controller="Notification" asp-route-id="@product.Id" class="material-icons">
+            email
+        </a>
+        <span class="message-count"><span class="digit">@Model.Notifications.Where(n => n.ProductId == product.Id).Count()</span></span>
+
+        @switch (product.Status)
+        {
+            case StatusType.Published:
+                <span class="badge badge-success">@StatusType.Published</span>
+                break;
+            case StatusType.Archived:
+                <span class="badge badge-warning">@StatusType.Archived</span>
+                break;
+            case StatusType.Drafted:
+                <span class="badge badge-dark">@StatusType.Drafted</span>
+                break;
+        }
+
+        @*<img class="card-img-top" src="~/images/@product.Image" alt="Card image cap">*@
+        <a class="btn btn-info" asp-action="Details" asp-controller="product" asp-route-id="@product.Id">Details</a>
+        <div class="card-body">
+            <p class="card-text">@product.Make @product.Model</p>
+            <p>R @product.Price</p>
+            <div class="product-buttons">
+                <a class="btn btn-primary" asp-action="" asp-controller="" asp-route-id="@product.Id">Edit</a>
+                <a class="btn btn-danger js-cancel-product" data-product-id="@product.Id">Cancel</a>
+            </div>
+        </div>
+    </div>
+    }
+</div>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $(".js-cancel-product").click(function (e) {
+                var link = $(e.target);
+
+
+                if (confirm("Are you sure you want to remove this product")) {
+                    $.ajax({
+                        url: "api/product/" + link.attr("data-product-id"),
+                    })
+                        .done(function () {
+                            link.parent("div").parent("div").parent("div").fadeOut(function () {
+                                $(this).remove();
+                            })
+                        })
+                        
+                }
+            });
+        });
+    </script>
+}

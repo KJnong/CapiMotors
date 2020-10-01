@@ -9,8 +9,8 @@ namespace CapiMotors.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
-        public DbSet<Vehicle> Vehicles { get; set; }
-        public DbSet<Images> Images { get; set; }
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Image> Images { get; set; }
         public DbSet<Notification> Notifications { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
@@ -20,8 +20,11 @@ namespace CapiMotors.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            builder.Entity<Images>()
-            .HasKey(c => new { c.VehicleId, c.ImageName });
+            builder.Entity<Product>()
+                .HasMany<Image>()
+                .WithOne( i => i.Product)
+                .HasForeignKey(f => f.ProductId);
+
             base.OnModelCreating(builder);
 
         }

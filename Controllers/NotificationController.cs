@@ -19,14 +19,14 @@ namespace CapiMotors.Controllers
             this.notificationRepository = notificationRepository;
             this.unitOfWork = unitOfWork;
         }
-        public IActionResult AddNotification(VehicleInfoViewModel model)
+        public IActionResult AddNotification(ProductDetailViewModel model)
         {
             Notification notification = new Notification
             {
                 Name = model.Name,
                 Email = model.Email,
                 Numbers = model.Phone,
-                VehicleId = model.VehicleId,
+                ProductId = model.VehicleId,
                 SellerId = model.SellerId
             };
 

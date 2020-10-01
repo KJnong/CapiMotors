@@ -176,11 +176,12 @@ C:\Projects\CapiMotors\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspa
 C:\Projects\CapiMotors\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Projects\CapiMotors\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Projects\CapiMotors\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\VehicleForm.cshtml.g.cs
-C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\VehicleInfo.cshtml.g.cs
 C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\Razor\Views\Shared\ListedVehicles.cshtml.g.cs
-C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\UserVehicles.cshtml.g.cs
 C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\CapiMotors.csproj.CoreCompileInputs.cache
 C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\CapiMotors.MvcApplicationPartsAssemblyInfo.cs
 C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\CapiMotors.MvcApplicationPartsAssemblyInfo.cache
 C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\Razor\Views\Notification\Notification.cshtml.g.cs
+C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\Razor\Views\Product\Details.cshtml.g.cs
+C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\Razor\Views\Product\Index.cshtml.g.cs
+C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Product\Details.cshtml.g.cs
+C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Product\Create.cshtml.g.cs

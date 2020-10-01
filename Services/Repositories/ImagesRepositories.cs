@@ -17,14 +17,14 @@ namespace CapiMotors.Services.Repositories
             this.context = context;
         }
 
-        public List<Images> Images(int id)
+        public List<Image> Images(int id)
         {
-            var images = context.Images.Where(i => i.VehicleId == id).ToList();
+            var images = context.Images.Where(i => i.ProductId == id).ToList();
 
             return images;
         }
 
-        public void AddImages(List<Images> images)
+        public void AddImages(List<Image> images)
         {
             context.Add(images);
         }

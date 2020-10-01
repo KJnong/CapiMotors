@@ -5,7 +5,7 @@ namespace CapiMotors.Data.Interfaces
 {
     public interface IImagesRepositories
     {
-        List<Images> Images(int id);
-        void AddImages(List<Images> images);
+        List<Image> Images(int id);
+        void AddImages(List<Image> images);
     }
 }

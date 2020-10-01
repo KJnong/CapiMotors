@@ -137,11 +137,11 @@ justify-content:center
 
 /*Admin vehicle card stylung*/
 .vehicle-buttons{
-    display:none
+    visibility:hidden;
 }
 
 .card-index-page:hover .vehicle-buttons {
-    display: block
+    visibility:visible;
 }
 
 /*Search input*/
