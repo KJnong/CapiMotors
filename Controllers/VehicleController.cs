@@ -137,7 +137,7 @@ namespace CapiMotors.Controllers
                 {
                     Make = form.Make,
                     Model = form.Model,
-                    Date = form.Date,
+                    Year = form.Year,
                     Colour = form.Colour,
                     PreviouslyOwned = form.PreviouslyOwned,
                     TowBar = form.TowBar,
@@ -145,7 +145,8 @@ namespace CapiMotors.Controllers
                     SellerId = userId,
                     Price = form.Price,
                     OtherImages = imagesObject,
-                    MainImageName = uniqueMainImageName
+                    MainImageName = uniqueMainImageName,
+                    Status = form.Status
                 };
               
                 vehicleRepository.AddVehicle(vehicle);

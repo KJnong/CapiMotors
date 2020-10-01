@@ -12,17 +12,10 @@ namespace CapiMotors.Models
     {
         public int Id { get; set; }
 
-  
         public ApplicationUser Seller { get; set; }
 
         [Required]
         public string SellerId { get; set; }
-
-        public List<Images> OtherImages { get; set; }
-
-        public List<Notification> notifications { get; set; }
-
-        public string MainImageName { get; set; }
 
         public string Make { get; set; }
 
@@ -30,7 +23,7 @@ namespace CapiMotors.Models
 
         public decimal Price { get; set; }
 
-        public DateTime Date { get; set; }
+        public int Year { get; set; }
 
         public string Colour { get; set; }
 
@@ -41,6 +34,13 @@ namespace CapiMotors.Models
         public bool SunRoof { get; set; }
 
         public bool IsCancelled { get; set; }
+
+        public string MainImageName { get; set; }
+        public List<Images> OtherImages { get; set; }
+
+        public StatusType Status { get; set; }
+
+        public List<Notification> notifications { get; set; }
 
     }
 }

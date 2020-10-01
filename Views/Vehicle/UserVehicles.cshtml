@@ -12,6 +12,20 @@
             email
         </a>
         <span class="message-count"><span class="digit">@Model.Notifications.Where(n => n.VehicleId == vehicle.Id).Count()</span></span>
+
+        @switch (vehicle.Status)
+        {
+            case StatusType.Published:
+                <span class="badge badge-success">@StatusType.Published</span>
+                break;
+            case StatusType.Archived:
+                <span class="badge badge-warning">@StatusType.Archived</span>
+                break;
+            case StatusType.Drafted:
+                <span class="badge badge-dark">@StatusType.Drafted</span>
+                break;
+        }
+
         <img class="card-img-top" src="~/images/@vehicle.MainImageName" alt="Card image cap">
         <a class="btn btn-info" asp-action="Details" asp-controller="Vehicle" asp-route-id="@vehicle.Id">Details</a>
         <div class="card-body">

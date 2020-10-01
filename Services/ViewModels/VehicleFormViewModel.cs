@@ -21,7 +21,7 @@ namespace CapiMotors.Services.ViewModels
         public decimal Price { get; set; }
 
         [Required]
-        public DateTime Date { get; set; }
+        public int Year { get; set; }
 
         [Required]
         public string Colour { get; set; }
@@ -36,13 +36,13 @@ namespace CapiMotors.Services.ViewModels
         public bool SunRoof { get; set; }
 
         [Required]
-        [DisplayName("More Images")]
         public List<IFormFile> OtherImages { get; set; }
 
 
         [Required]
-        [DisplayName("Cover Image")]
         public IFormFile MainImage { get; set; }
+
+        public StatusType Status { get; set; }
 
 
     }

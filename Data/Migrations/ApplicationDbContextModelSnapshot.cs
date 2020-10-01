@@ -74,9 +74,6 @@ namespace CapiMotors.Data.Migrations
                     b.Property<string>("Colour")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("Date")
-                        .HasColumnType("datetime2");
-
                     b.Property<bool>("IsCancelled")
                         .HasColumnType("bit");
 
@@ -99,11 +96,17 @@ namespace CapiMotors.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<int>("Status")
+                        .HasColumnType("int");
+
                     b.Property<bool>("SunRoof")
                         .HasColumnType("bit");
 
                     b.Property<bool>("TowBar")
                         .HasColumnType("bit");
+
+                    b.Property<int>("Year")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 

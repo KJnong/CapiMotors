@@ -76,8 +76,7 @@ body {
     display: flex;
     justify-content: center;
     color: white;
-    background-color: #032ed5;
-    font-weight: bold
+    background-color: darkcyan 
 }
 
 .logo > span{
@@ -136,12 +135,12 @@ justify-content:center
 
 
 /*Admin vehicle card stylung*/
-.vehicle-buttons{
-    display:none
+.vehicle-buttons {
+    visibility: hidden;
 }
 
 .card-index-page:hover .vehicle-buttons {
-    display: block
+    visibility: visible;
 }
 
 /*Search input*/
