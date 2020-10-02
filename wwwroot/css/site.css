@@ -11,7 +11,7 @@ a.navbar-brand {
 header {
     border-bottom:3px solid;
     border-bottom-color:black;
-    margin-bottom:10px
+    margin-bottom:50px
 }
 
 /* Provide sufficient contrast against white background */
@@ -110,12 +110,13 @@ nav {
 }
 
 .Details{
-    visibility:hidden;
-    background-color:black
-
+    background-color: white;
+    border-radius:5px
 }
 
 .card:hover .Details{
+    background-color:black;
+    color:wheat;
     visibility:visible
 }
 
@@ -124,6 +125,7 @@ nav {
     height: 15vw;
     object-fit: contain;
 }
+
 
 /*info page styling*/
 .info-container{
@@ -177,6 +179,12 @@ justify-content:center
 
 #search {
     width: 300px; 
+    margin-bottom:20px;
+}
+.form-group {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: center
 }
 
 .form-control {

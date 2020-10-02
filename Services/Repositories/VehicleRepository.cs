@@ -58,5 +58,7 @@ namespace CapiMotors.Services.Repositories
             vehicle.IsCancelled = false;
 
         }
+
+      
     }
 }

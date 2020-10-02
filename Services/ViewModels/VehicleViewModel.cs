@@ -11,6 +11,8 @@ namespace CapiMotors.Services.ViewModels
         public List<Vehicle> Vehicles{ get; set; }
         public List<Notification> Notifications { get; set; }
         public string Search { get; set; }
+        public PriceRangeSearch PriceRange { get; set; }
+        public List<string> MakeSearchList { get; set; }
 
     }
 }

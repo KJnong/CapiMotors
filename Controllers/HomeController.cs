@@ -25,9 +25,13 @@ namespace CapiMotors.Controllers
         public IActionResult Index()
         {
             var vehicles = vehicleRepository.GetAllVehicles();
+
+
+
             VehicleViewModel model = new VehicleViewModel
             {
-                Vehicles = vehicles
+                Vehicles = vehicles,
+                MakeSearchList = vehicles.Select(m => m.Make).Distinct().ToList()
             }; 
 
             return View("PublishedVehicles", model);
