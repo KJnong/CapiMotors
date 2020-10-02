@@ -32,7 +32,7 @@
             <p class="card-text">@vehicle.Make @vehicle.Model</p>
             <p>R @vehicle.Price</p>
             <div class="vehicle-buttons">
-                <a class="btn btn-primary" asp-action="" asp-controller="" asp-route-id="@vehicle.Id">Edit</a>
+                <a class="btn btn-primary" asp-action="Edit" asp-controller="Vehicle" asp-route-id="@vehicle.Id">Edit</a>
                 <a class="btn btn-danger js-cancel-vehicle" data-vehicle-id="@vehicle.Id">Cancel</a>
             </div>
         </div>

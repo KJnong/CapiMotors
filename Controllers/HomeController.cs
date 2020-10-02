@@ -30,7 +30,7 @@ namespace CapiMotors.Controllers
                 Vehicles = vehicles
             }; 
 
-            return View("ListedVehicles", model);
+            return View("PublishedVehicles", model);
         }
 
         public IActionResult Privacy()

@@ -39,13 +39,15 @@ namespace CapiMotors.Controllers
         }
 
 
-        // GET: VehileController
-        public ActionResult Index()
+        [Authorize]
+        public ActionResult Create()
         {
-            return View();
+            VehicleFormViewModel model = new VehicleFormViewModel { Action = "Create" };
+
+            return View("VehicleForm", model);
         }
 
-        // GET: VehileController/Details/5
+
         public ActionResult Details(int id)
         {
             var imagesFromDatabase = imagesRepositories.Images(id);
@@ -67,7 +69,9 @@ namespace CapiMotors.Controllers
             return View("VehicleInfo", vehicleInfoViewModel);
         }
 
-        public ActionResult UserVehicles()
+
+        [Authorize]
+        public ActionResult AdminVehicles()
         {
             var userId = userManager.GetUserId(HttpContext.User);
 
@@ -80,17 +84,10 @@ namespace CapiMotors.Controllers
                 Vehicles = vehicles
             };
 
-            return View("UserVehicles", model);
+            return View("AdminVehicles", model);
         }
 
-        // GET: VehileController/Create
-        [Authorize]
-        public ActionResult Create()
-        {
-            return View("VehicleForm");
-        }
-
-        // POST: VehileController/Create
+     
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -132,7 +129,6 @@ namespace CapiMotors.Controllers
 
                 }
 
-
                 Vehicle vehicle = new Vehicle
                 {
                     Make = form.Make,
@@ -156,46 +152,39 @@ namespace CapiMotors.Controllers
             return RedirectToAction("Index", "Home");
         }
 
-        // GET: VehileController/Edit/5
+    
+        [Authorize]
         public ActionResult Edit(int id)
         {
-            return View();
+            var vehicle = vehicleRepository.GetVehicle(id);
+
+            VehicleFormViewModel model = new VehicleFormViewModel
+            {
+                Action = "Update",
+                Id = id,
+                Make = vehicle.Make,
+                Model = vehicle.Model,
+                Price = vehicle.Price,
+                Colour = vehicle.Colour,
+                Year = vehicle.Year,
+                PreviouslyOwned = vehicle.PreviouslyOwned,
+                SunRoof = vehicle.SunRoof,
+                TowBar = vehicle.TowBar,
+                Status = vehicle.Status,
+            };
+
+
+            return View("VehicleForm", model);
         }
 
-        // POST: VehileController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        [Authorize]
+        public IActionResult Update(VehicleFormViewModel form)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+            var vehicle = vehicleRepository.GetVehicle(form.Id);
+            vehicle.Update(form);
+            unitOfWork.Complete();
 
-        // GET: VehileController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: VehileController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction("AdminVehicles", "Vehicle");
         }
     }
 }

@@ -12,6 +12,7 @@ namespace CapiMotors.Services.ViewModels
 {
     public class VehicleFormViewModel
     {
+        public int Id { get; set; }
         [Required]
         public string Make { get; set; }
 
@@ -37,6 +38,8 @@ namespace CapiMotors.Services.ViewModels
 
         [Required]
         public List<IFormFile> OtherImages { get; set; }
+
+        public string Action { get; set; }
 
 
         [Required]

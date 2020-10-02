@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CapiMotors.Services.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
@@ -41,6 +42,19 @@ namespace CapiMotors.Models
         public StatusType Status { get; set; }
 
         public List<Notification> notifications { get; set; }
+
+        public void Update(VehicleFormViewModel model)
+        {
+            Make = model.Make;
+            Model = model.Model;
+            Price = model.Price;
+            Year = model.Year;
+            Colour = model.Colour;
+            PreviouslyOwned = model.PreviouslyOwned;
+            TowBar = TowBar;
+            SunRoof = model.SunRoof;
+
+        }
 
     }
 }
