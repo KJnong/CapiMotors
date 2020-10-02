@@ -5,11 +5,18 @@ a.navbar-brand {
   white-space: normal;
   text-align: center;
   word-break: break-all;
+ 
+}
+
+header {
+    border-bottom:3px solid;
+    border-bottom-color:black;
+    margin-bottom:10px
 }
 
 /* Provide sufficient contrast against white background */
 a {
-  color: #0366d6;
+    color: black
 }
 
 .btn-primary {
@@ -66,21 +73,30 @@ body {
   position: absolute;
   bottom: 0;
   width: 100%;
+  background-color:black;
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
 
 
-/*logo styling*/
+/*logo navbar styling*/
 .logo {
     display: flex;
     justify-content: center;
     color: white;
-    background-color: darkcyan 
+    background-color:black 
 }
 
-.logo > span{
-    color:orange
+    .logo > span {
+        color: #ffc414
+    }
+
+nav {
+    background-color: #ffc414;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: black;
 }
 
 /*Sale layout styling*/
@@ -94,7 +110,9 @@ body {
 }
 
 .Details{
-    visibility:hidden
+    visibility:hidden;
+    background-color:black
+
 }
 
 .card:hover .Details{
