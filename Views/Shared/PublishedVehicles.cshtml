@@ -1,7 +1,7 @@
 ﻿@model CapiMotors.Services.ViewModels.VehicleViewModel
 
 @{
-    ViewData["Title"] = "View";
+    ViewData["Title"] = "Home Page";
 }
 
 @using (Html.BeginForm("Search", "Gigs"))
@@ -25,7 +25,7 @@
         <img class="card-img-top" src="~/images/@vehicle.MainImageName" alt="Card image cap">
         <p class="card-text">@vehicle.Make @vehicle.Model</p>
         <p>R @vehicle.Price</p>
-        <a class="btn btn-info" asp-action="Details" asp-controller="Vehicle" asp-route-id="@vehicle.Id">Details</a>
+        <a class="btn btn-info Details" asp-action="Details" asp-controller="Vehicle" asp-route-id="@vehicle.Id">Details</a>
         <div class="card-body">
 
         </div>

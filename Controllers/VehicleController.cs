@@ -66,7 +66,7 @@ namespace CapiMotors.Controllers
                 Vehicle = vehicle
             };
             
-            return View("VehicleInfo", vehicleInfoViewModel);
+            return View("VehicleDetails", vehicleInfoViewModel);
         }
 
 

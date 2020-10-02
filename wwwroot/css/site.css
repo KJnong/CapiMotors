@@ -89,14 +89,22 @@ body {
     display:flex;
     flex-wrap :wrap;
     flex-basis:auto;
-    justify-content:space-between
+    justify-content:space-around
 
 }
 
-.card-img-top{
-    width:100%;
-    height:15vw;
-    object-fit:contain;
+.Details{
+    visibility:hidden
+}
+
+.card:hover .Details{
+    visibility:visible
+}
+
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: contain;
 }
 
 /*info page styling*/
