@@ -7,7 +7,7 @@ using CapiMotors.Models;
 using CapiMotors.Services.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CapiMotors.Controllers
+namespace CapiMotors.Controllers.ShopFront
 {
     public class NotificationController : Controller
     {
@@ -34,13 +34,6 @@ namespace CapiMotors.Controllers
             unitOfWork.Complete();
 
             return RedirectToAction("Index", "Home");
-        }
-
-        public IActionResult Notification(int id)
-        {
-            var notification = notificationRepository.GetNotifications(id);
-
-            return View(notification);
         }
     }
 }

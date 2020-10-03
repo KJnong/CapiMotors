@@ -181,7 +181,9 @@ justify-content:center
     width: 300px; 
     margin-bottom:20px;
 }
-.form-group {
+
+/*Fix Forms*/
+.searchBar {
     margin-bottom: 1rem;
     display: flex;
     justify-content: center

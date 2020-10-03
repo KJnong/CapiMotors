@@ -66,8 +66,6 @@ C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\CapiMotors.TagHelpers.input.cache
 C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\CapiMotors.TagHelpers.output.cache
 C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\CapiMotors.RazorCoreGenerate.cache
 C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
-C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
 C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_LoginPartial.cshtml.g.cs
@@ -176,11 +174,13 @@ C:\Projects\CapiMotors\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspa
 C:\Projects\CapiMotors\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Projects\CapiMotors\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Projects\CapiMotors\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\VehicleForm.cshtml.g.cs
 C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\CapiMotors.csproj.CoreCompileInputs.cache
 C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\CapiMotors.MvcApplicationPartsAssemblyInfo.cs
 C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\CapiMotors.MvcApplicationPartsAssemblyInfo.cache
+C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\Razor\Views\Notification\Notification.cshtml.g.cs
-C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\Razor\Views\Shared\PublishedVehicles.cshtml.g.cs
 C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\AdminVehicles.cshtml.g.cs
 C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\VehicleDetails.cshtml.g.cs
+C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\VehicleForm.cshtml.g.cs
+C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\Razor\Views\Shared\PublishedVehicles.cshtml.g.cs

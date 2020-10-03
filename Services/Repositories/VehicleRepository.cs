@@ -1,6 +1,7 @@
 ﻿using CapiMotors.Data;
 using CapiMotors.Data.Interfaces;
 using CapiMotors.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -55,10 +56,36 @@ namespace CapiMotors.Services.Repositories
         public void Cancel(int id)
         {
             var vehicle = _context.Vehicles.Where(v => v.Id == id).FirstOrDefault();
-            vehicle.IsCancelled = false;
+            vehicle.Status = StatusType.Archived;
 
         }
 
-      
+        public List<Vehicle> GetVehiclesBySearchCriteria(SearchDto search)
+        {
+            var priceRange = GetPriceRange(search.PriceRange.Value);
+
+           return _context.Vehicles.Where(v => 
+            (string.IsNullOrEmpty(search.Make) && v.Make == search.Make) && //only include "make" in where clause when its not empty 
+            (search.PriceRange.HasValue && v.Price >= priceRange.MinPrice) &&
+            (search.PriceRange.HasValue && v.Price <= priceRange.MaxPrice)).ToList();
+        }
+
+        //Return type is called a Tuple
+        private (int MinPrice, int MaxPrice) GetPriceRange(PriceRangeSearch price)
+        {
+            //TODO: Finish the cases
+            switch (price)
+            {
+                case PriceRangeSearch.R10K_R50K:
+                    return (10000, 50000);
+
+                case PriceRangeSearch.R200K_R300K:
+                    return (200000, 300000);
+
+                default:
+                    return (10000, 50000);
+
+            }
+        }
     }
 }

@@ -27,7 +27,7 @@
         }
 
         <img class="card-img-top" src="~/images/@vehicle.MainImageName" alt="Card image cap">
-        <a class="btn btn-info Details" asp-action="Details" asp-controller="Vehicle" asp-route-id="@vehicle.Id">Details</a>
+        <a class="btn Details" asp-action="Details" asp-controller="Vehicle" asp-route-id="@vehicle.Id">Details</a>
         <div class="card-body">
             <p class="card-text">@vehicle.Make @vehicle.Model</p>
             <p>R @vehicle.Price</p>

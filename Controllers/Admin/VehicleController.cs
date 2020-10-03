@@ -12,7 +12,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
-namespace CapiMotors.Controllers
+namespace CapiMotors.Controllers.Admin
 {
     public class VehicleController : Controller
     {
@@ -46,29 +46,6 @@ namespace CapiMotors.Controllers
 
             return View("VehicleForm", model);
         }
-
-
-        public ActionResult Details(int id)
-        {
-            var imagesFromDatabase = imagesRepositories.Images(id);
-            var vehicle = vehicleRepository.GetVehicle(id);
-            
-            List<string> images = new List<string>();
-
-            foreach(var image in imagesFromDatabase)
-            {
-                images.Add(image.ImageName);
-            }
-
-            VehicleInfoViewModel vehicleInfoViewModel = new VehicleInfoViewModel
-            {
-                ImagesNames = images,
-                Vehicle = vehicle
-            };
-            
-            return View("VehicleDetails", vehicleInfoViewModel);
-        }
-
 
         [Authorize]
         public ActionResult AdminVehicles()

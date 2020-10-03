@@ -1,4 +1,5 @@
 ﻿using CapiMotors.Models;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
 namespace CapiMotors.Data.Interfaces
@@ -12,5 +13,6 @@ namespace CapiMotors.Data.Interfaces
         void AddVehicle(Vehicle vehicle);
         void RemoveVehicle(Vehicle vehicle);
         void Cancel(int id);
+        List<Vehicle> GetVehiclesBySearchCriteria(SearchDto search);
     }
 }

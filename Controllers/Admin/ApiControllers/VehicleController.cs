@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CapiMotors.Data.Interfaces;
+using CapiMotors.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CapiMotors.Controllers.ApiControllers
 {
-    [Route("Vehicle/api/[controller]/{id}")]
+    [Route("Vehicle/api/{controller}/{id}")]
     [ApiController]
     public class VehicleController : ControllerBase
     {
@@ -21,13 +22,22 @@ namespace CapiMotors.Controllers.ApiControllers
             this.unitOfWork = unitOfWork;
         }
 
-    
+
         public IActionResult Cancel(int id)
         {
             vehicleRepository.Cancel(id);
             unitOfWork.Complete();
 
             return Ok();
+        }
+
+        
+        [HttpPost]
+        public IActionResult Search(SearchDto search)
+        {
+            var data = vehicleRepository.GetVehiclesBySearchCriteria(search);
+
+            return Ok(data);
         }
     }
 }

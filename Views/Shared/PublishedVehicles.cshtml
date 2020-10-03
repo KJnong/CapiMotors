@@ -4,20 +4,22 @@
     ViewData["Title"] = "Home Page";
 }
 
-@using (Html.BeginForm("Search", "Gigs", FormMethod.Post, new { id = "searchFrom" }))
+@using (Html.BeginForm("Search", "Gigs"))
 {
     <div class="form-group search">
-        <div class="input-group">
-                <div class="form-group">
+        <div class="input-group" id="search">
+            <form asp-action="Search" asp-controller="Vehicle">
+                <div class="form-group searchBar">
                     <i class="input-group-addon">
                         <span class="material-icons">
                             search
                         </span>
                     </i>
-                    @Html.DropDownListFor(m=>m.MakeSearchList, new SelectList(Model.MakeSearchList), "Make", new { @class = "form-control" })
+                    @Html.DropDownList("Make", new SelectList(Model.MakeSearchList), "Make", new { @class = "form-control" })
                     @Html.DropDownListFor(d => d.PriceRange, Html.GetEnumSelectList<PriceRangeSearch>(), "Price", new { @class = "form-control" })
                     <button class="btn btn-warning">Search</button>
                 </div>
+            </form>
         </div>
     </div>
 }
@@ -29,19 +31,13 @@
         <img class="card-img-top" src="~/images/@vehicle.MainImageName" alt="Card image cap">
         <p class="card-text">@vehicle.Make @vehicle.Model</p>
         <p>R @vehicle.Price</p>
-        <button class="Details" asp-action="Details" asp-controller="Vehicle" asp-route-id="@vehicle.Id">Details</button>
+        <a class="btn Details" asp-action="Details" asp-controller="Vehicle" asp-route-id="@vehicle.Id">Details</a>
         <div class="card-body">
 
         </div>
     </div>
     }
 </div>
-
-@*<script>
-    $(document).ready(function () {
-        $.post("api/vehicle/search", {make: })
-    }) 
-</script>*@
 
 
 
