@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="CapiMotors20201003063637" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Projects\\CapiMotors\\obj\\Release\\netcoreapp3\.1\\PubTmp\\Out\\$" />
+  </parameter>
+  <parameter name="CapiMotors.Data.ApplicationDbContext" description="" value="Data Source=tcp:capimotors.database.windows.net,1433;Initial Catalog=capimtors;User Id=JTnong234567@capimotors;Password=JTnong135" tags="dbfullsql">
+    <parameterEntry kind="ProviderPath" scope="dbfullsql" match="^C:\\Projects\\CapiMotors\\obj\\Release\\netcoreapp3\.1\\PubTmp\\EFSQLScripts\\CapiMotors\.Data\.ApplicationDbContext\.sql$" />
+  </parameter>
+</parameters>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAC8EtpHlV00OSz/VwN1HBkQAAAAACAAAAAAAQZgAAAAEAACAAAACHL0Zu0S6JCDpZqtxm5cjwpwh8nBq8HVwTTNDUh1gOlwAAAAAOgAAAAAIAACAAAADiL5hWElLfHweIATUg7krdovQFLHVMYMkGcGw8ezqe/oAAAABp54zGdu46F554rUnbho5fN4IsqCmTkK9MCGfGP87zYNXjwMk9VWJ10TAUYheTydBoCTVRDz41pOEm3r5AOsr6UPRTp28+MHwpQNZ7tTsMT104IzTmEEDw8SgVZZbiYYIPCVnxRnFQGd4e0RrmaEbYz8V7djAPgpplfwtM3rYJNEAAAACbtkxVjoTDz8nkWa+ASMNYhcnlSFqxNAHCUYXR5LUVnppgoWJTqtr0gLOraveAwV8riVS25arrTsrL4HkCy9Yn</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=tcp:capimotors.database.windows.net,1433%3bInitial Catalog=capimtors%3bUser Id=JTnong234567%40capimotors%3bPassword=JTnong135</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="CapiMotors.Data.ApplicationDbContext">
+      <Value>Data Source=tcp:capimotors.database.windows.net,1433%3bInitial Catalog=capimtors%3bUser Id=JTnong234567%40capimotors%3bPassword=JTnong135</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

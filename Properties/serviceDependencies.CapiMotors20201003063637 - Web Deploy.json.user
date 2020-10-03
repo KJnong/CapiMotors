@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "restored": true,
+      "restoreTime": "2020-10-03T04:47:48.5413826Z"
+    }
+  },
+  "parameters": {
+    "resourceGroup": {
+      "Type": "resourceGroup",
+      "Value": "CapiMotors20201003063637ResourceGroup"
+    },
+    "subscriptionId": {
+      "Type": "subscription",
+      "Value": "575938df-a607-4a8b-bdd7-bfc8e9f9e818"
+    }
+  }
+}

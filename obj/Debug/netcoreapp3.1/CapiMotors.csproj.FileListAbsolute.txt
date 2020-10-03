@@ -184,3 +184,4 @@ C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\AdminVehicles
 C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\VehicleDetails.cshtml.g.cs
 C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\VehicleForm.cshtml.g.cs
 C:\Projects\CapiMotors\obj\Debug\netcoreapp3.1\Razor\Views\Shared\PublishedVehicles.cshtml.g.cs
+C:\Projects\CapiMotors\bin\Debug\netcoreapp3.1\Properties\serviceDependencies.CapiMotors20201003063637 - Web Deploy.json
