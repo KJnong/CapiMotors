@@ -29,33 +29,23 @@
         {
         @foreach (var vehicle in Model.Vehicles)
             {
-        @*<div class="card  container" style="width: 18rem;">
-                <img class="card-img-top" src="~/images/@vehicle.MainImageName" alt="Card image cap">
-                <p class="card-text">@vehicle.Make @vehicle.Model</p>
-                <p>R @vehicle.Price</p>
-                <a class="btn Details" asp-action="Details" asp-controller="Vehicle" asp-route-id="@vehicle.Id">Details</a>
-                <div class="card-body">
-
-                </div>
-            </div>*@
-
-        <div class="col-md-4">
-            <div class="card mb-4 shadow-sm">
-                <img class="bd-placeholder-img card-img-top" src="~/images/@vehicle.MainImageName" alt="Card image cap" />
-                <div class="card-body">
-                    <p class="card-text">
-                        @vehicle.Make @vehicle.Model <br />
-                        @string.Format("{0:c}", vehicle.Price)
-                    </p>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="btn-group">
-                            <a class="btn btn-sm btn-outline-secondary" asp-action="Details" asp-controller="Vehicle" asp-route-id="@vehicle.Id">View</a>
+                <div class="col-md-4">
+                    <div class="card mb-4 shadow-sm">
+                        <img class="bd-placeholder-img card-img-top" src="~/images/@vehicle.MainImageName" alt="Card image cap" />
+                        <div class="card-body">
+                            <p class="card-text">
+                                @vehicle.Make @vehicle.Model <br />
+                                @string.Format("{0:c}", vehicle.Price)
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <a class="btn btn-sm btn-outline-secondary" asp-action="Details" asp-controller="Vehicle" asp-route-id="@vehicle.Id">View</a>
+                                </div>
+                               
+                            </div>
                         </div>
-                        <small class="text-muted">9 mins</small>
                     </div>
                 </div>
-            </div>
-        </div>
             }
         }
         else

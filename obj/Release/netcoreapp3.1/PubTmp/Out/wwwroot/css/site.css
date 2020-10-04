@@ -137,29 +137,31 @@ nav {
 .material-icons {
     position: relative;
     top: 9px;
-    color: black
+    color: black;
+    right: 15px;
 }
 
+
 .message-count {
-position: relative;
-top: -20px;
-left:18px;
-right: 14px;
-width:20px;
-height:20px;
-border-radius:10px;
-background-color:orange;
-font-size:small;
-color:white;
-display:flex;
-justify-content:center
+    position: relative;
+    left: 0;
+    bottom:35px;
+    right: 50px;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: orange;
+    font-size: small;
+    color: white;
+    display: flex;
+    justify-content: center
 }
 
 
 
 /*Admin vehicle card stylung*/
 .vehicle-buttons {
-    visibility: hidden;
+    visibility: visible;
 }
 
 .card-index-page:hover .vehicle-buttons {
@@ -173,22 +175,28 @@ justify-content:center
 }
 
 #search {
-    width: 300px; 
-    margin-bottom:20px;
+    width: 75%;
+    margin-bottom: 20px;
+    justify-content: center;
 }
 
 /*Fix Forms*/
 .searchBar {
     margin-bottom: 1rem;
-    display: flex;
+    display: flex;  
     justify-content: center
 }
 
-.form-control {
-    font-size: 17px;
-    height: 44px;
-    border-radius: 14px;
-}
+    .searchBar .form-control {
+        margin: 0 8px;
+        border-radius: 6px;
+    }
+
+    .form-control {
+        font-size: 17px;
+        height: 44px;
+        border-radius: 14px;
+    }
 
 /*card image*/
 .card-img-top{

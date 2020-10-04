@@ -32,6 +32,22 @@
             <ul>
                 <li>@string.Format("{0:c}", Model.Vehicle.Price)</li>
                 <li>Color-@Model.Vehicle.Colour</li>
+                @if (Model.Vehicle.SunRoof)
+                {
+                    <li>SunRoof</li>
+                }
+                @if (Model.Vehicle.TowBar)
+                {
+                    <li>Towbar</li>
+                }
+                @if (Model.Vehicle.PreviouslyOwned)
+                {
+                    <li>Previously Owned</li>
+                }
+                else
+                {
+                    <li>New</li>
+                }
             </ul>
         </div>
 
