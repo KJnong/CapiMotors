@@ -7,6 +7,7 @@ namespace CapiMotors.Models
 {
     public enum PriceRangeSearch
     {
+        All = 0,
         R10K_R50K = 1,
         R50K_R100K = 2,
         R50K_R200K = 3,

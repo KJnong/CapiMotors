@@ -4,40 +4,103 @@
     ViewData["Title"] = "Home Page";
 }
 
-@using (Html.BeginForm("Search", "Vehicle"))
+@using (Html.BeginForm(FormMethod.Post, new { @class = "search-form" }))
 {
-    <div class="form-group search">
-        <div class="input-group" id="search">
-            <form asp-action="Search" asp-controller="Vehicle">
-                <div class="form-group searchBar">
-                    <i class="input-group-addon">
-                        <span class="material-icons">
-                            search
-                        </span>
-                    </i>
-                    @Html.DropDownList("Make", new SelectList(Model.MakeSearchList), "Make", new { @class = "form-control" })
-                    @Html.DropDownListFor(d => d.PriceRange, Html.GetEnumSelectList<PriceRangeSearch>(), "Price", new { @class = "form-control" })
-                    <button class="btn btn-warning">Search</button>
-                </div>
-            </form>
+<div class="form-group search">
+    <div class="input-group" id="search">
+        <div class="form-group searchBar">
+            <i class="input-group-addon">
+                <span class="material-icons">
+                    search
+                </span>
+            </i>
+            @Html.DropDownList("Make", new SelectList(Model.MakeSearchList), "Make", new { @class = "form-control make" })
+            @Html.DropDownListFor(d => d.PriceRange, Html.GetEnumSelectList<PriceRangeSearch>(),  new { @class = "form-control range" })
+            <button class="btn btn-warning js-button">Search</button>
         </div>
     </div>
+</div>
 }
 
-<div class="sale">
-    @foreach (var vehicle in Model.Vehicles)
-    {
-    <div class="card  container" style="width: 18rem;">
-        <img class="card-img-top" src="~/images/@vehicle.MainImageName" alt="Card image cap">
-        <p class="card-text">@vehicle.Make @vehicle.Model</p>
-        <p>R @vehicle.Price</p>
-        <a class="btn Details" asp-action="Details" asp-controller="Vehicle" asp-route-id="@vehicle.Id">Details</a>
-        <div class="card-body">
 
+<div id="vehicle-container" class="card-markup">
+    <div class="sale">
+        @if(Model.Vehicles.Any())
+        {
+        @foreach (var vehicle in Model.Vehicles)
+            {
+        @*<div class="card  container" style="width: 18rem;">
+                <img class="card-img-top" src="~/images/@vehicle.MainImageName" alt="Card image cap">
+                <p class="card-text">@vehicle.Make @vehicle.Model</p>
+                <p>R @vehicle.Price</p>
+                <a class="btn Details" asp-action="Details" asp-controller="Vehicle" asp-route-id="@vehicle.Id">Details</a>
+                <div class="card-body">
+
+                </div>
+            </div>*@
+
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <img class="bd-placeholder-img card-img-top" src="~/images/@vehicle.MainImageName" alt="Card image cap" />
+                <div class="card-body">
+                    <p class="card-text">
+                        @vehicle.Make @vehicle.Model <br />
+                        @string.Format("{0:c}", vehicle.Price)
+                    </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <a class="btn btn-sm btn-outline-secondary" asp-action="Details" asp-controller="Vehicle" asp-route-id="@vehicle.Id">View</a>
+                        </div>
+                        <small class="text-muted">9 mins</small>
+                    </div>
+                </div>
+            </div>
         </div>
+            }
+        }
+        else
+        {
+        <p>No Vehicles matching your filter found! </p>
+        }
     </div>
-    }
 </div>
 
+
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+
+            let data;
+            $(".search-form").on("change", function (e) {
+                data = {
+                    range: $(".range").val(),
+                    make: $(".make").val()
+                }
+
+            });
+
+            $(".js-button").click(function (e) {
+                e.preventDefault();
+
+                console.log(data)
+                $.ajax({
+                    url: "vehicle/api/vehicle/search",
+                    data: data
+                })
+                    .done(function (res) {
+
+                        $("#vehicle-container").load('/home/index #vehicle-container', { searchedV: res, renderSearch: true });
+
+                    })
+                    .fail(function () {
+                        alert("Search Failed");
+                    })
+
+
+            });
+        });
+    </script>
+}
 
 

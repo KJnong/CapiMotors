@@ -19,22 +19,7 @@ namespace CapiMotors.Controllers.Admin
             this.notificationRepository = notificationRepository;
             this.unitOfWork = unitOfWork;
         }
-        public IActionResult AddNotification(VehicleInfoViewModel model)
-        {
-            Notification notification = new Notification
-            {
-                Name = model.Name,
-                Email = model.Email,
-                Numbers = model.Phone,
-                VehicleId = model.VehicleId,
-                SellerId = model.SellerId
-            };
 
-            notificationRepository.AddNotification(notification);
-            unitOfWork.Complete();
-
-            return RedirectToAction("Index", "Home");
-        }
 
         public IActionResult Notification(int id)
         {

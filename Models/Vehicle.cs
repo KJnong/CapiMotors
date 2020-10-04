@@ -13,10 +13,6 @@ namespace CapiMotors.Models
     {
         public int Id { get; set; }
 
-        public ApplicationUser Seller { get; set; }
-
-        [Required]
-        public string SellerId { get; set; }
 
         public string Make { get; set; }
 
@@ -41,6 +37,11 @@ namespace CapiMotors.Models
 
         public StatusType Status { get; set; }
 
+        public ApplicationUser Seller { get; set; }
+
+        [Required]
+        public string SellerId { get; set; }
+
         public List<Notification> notifications { get; set; }
 
         public void Update(VehicleFormViewModel model)
@@ -53,7 +54,6 @@ namespace CapiMotors.Models
             PreviouslyOwned = model.PreviouslyOwned;
             TowBar = TowBar;
             SunRoof = model.SunRoof;
-
         }
 
     }

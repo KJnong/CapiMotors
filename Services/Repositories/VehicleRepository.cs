@@ -21,7 +21,7 @@ namespace CapiMotors.Services.Repositories
 
         public List<Vehicle> GetAllVehicles()
         {
-            var sale = _context.Vehicles.ToList();
+            var sale = _context.Vehicles.Where(v =>v.Status == StatusType.Published ).ToList();
             return sale;
         }
 
@@ -65,12 +65,12 @@ namespace CapiMotors.Services.Repositories
             var priceRange = GetPriceRange(search.PriceRange.Value);
 
            return _context.Vehicles.Where(v => 
-            (string.IsNullOrEmpty(search.Make) && v.Make == search.Make) && //only include "make" in where clause when its not empty 
+            (!string.IsNullOrEmpty(search.Make) && v.Make == search.Make) && 
             (search.PriceRange.HasValue && v.Price >= priceRange.MinPrice) &&
             (search.PriceRange.HasValue && v.Price <= priceRange.MaxPrice)).ToList();
         }
 
-        //Return type is called a Tuple
+      
         private (int MinPrice, int MaxPrice) GetPriceRange(PriceRangeSearch price)
         {
             //TODO: Finish the cases
@@ -83,7 +83,7 @@ namespace CapiMotors.Services.Repositories
                     return (200000, 300000);
 
                 default:
-                    return (10000, 50000);
+                    return (0, 50000000);
 
             }
         }

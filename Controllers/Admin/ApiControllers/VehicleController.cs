@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CapiMotors.Controllers.ApiControllers
 {
-    [Route("Vehicle/api/{controller}/{id}")]
+    [Route("Vehicle/api/{controller}/{action}")]
     [ApiController]
     public class VehicleController : ControllerBase
     {
@@ -32,9 +32,17 @@ namespace CapiMotors.Controllers.ApiControllers
         }
 
         
-        [HttpPost]
-        public IActionResult Search(SearchDto search)
+        public IActionResult Search(int range, string make="")
         {
+            PriceRangeSearch price = (PriceRangeSearch)range;
+            
+
+            SearchDto search = new SearchDto
+            {
+                PriceRange = price,
+                Make = make
+            };
+
             var data = vehicleRepository.GetVehiclesBySearchCriteria(search);
 
             return Ok(data);

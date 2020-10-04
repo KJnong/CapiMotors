@@ -22,16 +22,14 @@ namespace CapiMotors.Controllers
             this.vehicleRepository = vehicleRepository;
         }
 
-        public IActionResult Index()
+        public IActionResult Index( bool renderSearch = false, List<Vehicle> searchedV = null)
         {
-            var vehicles = vehicleRepository.GetAllVehicles();
-
-
+            var Allvehicles = vehicleRepository.GetAllVehicles();
 
             VehicleViewModel model = new VehicleViewModel
             {
-                Vehicles = vehicles,
-                MakeSearchList = vehicles.Select(m => m.Make).Distinct().ToList()
+                Vehicles = renderSearch ? searchedV : Allvehicles.OrderByDescending(o => o.Id).Take(4).ToList(),
+                MakeSearchList = Allvehicles.Select(m => m.Make).Distinct().ToList()
             }; 
 
             return View("PublishedVehicles", model);
