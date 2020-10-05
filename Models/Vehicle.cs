@@ -54,6 +54,7 @@ namespace CapiMotors.Models
             PreviouslyOwned = model.PreviouslyOwned;
             TowBar = TowBar;
             SunRoof = model.SunRoof;
+            Status = model.Status;
         }
 
     }
