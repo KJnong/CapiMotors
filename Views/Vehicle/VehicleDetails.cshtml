@@ -22,7 +22,7 @@
     <div class="row">
 
         <div class="col-md-8">
-            <img class="img-fluid" src="~/images/@Model.Vehicle.MainImageName" alt="">
+            <img class="img-fluid image1" src="~/images/@Model.Vehicle.MainImageName" alt="">
         </div>
 
         <div class="col-md-4">
@@ -59,9 +59,9 @@
         {
 
             <div class="col-md-3 col-sm-6 mb-4">
-                <a href="#">
-                    <img class="img-fluid" src="~/images/@img" alt="">
-                </a>
+                <div class="image-toggle">
+                    <img class="img-fluid image2" src="~/images/@img" alt="">
+                </div>
             </div>
 
         }
@@ -123,5 +123,19 @@
     
 
     @section Scripts {
+
+        <script>
+            $(document).ready(function () {
+              
+
+                $(".image-toggle").click(function (e) {
+                    $(".image1").attr("src", e.target.getAttribute('src'))
+                })
+
+
+            })
+        </script>
+
         @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
     }
