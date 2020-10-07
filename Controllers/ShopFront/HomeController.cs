@@ -28,7 +28,7 @@ namespace CapiMotors.Controllers
 
             VehicleViewModel model = new VehicleViewModel
             {
-                Vehicles = renderSearch ? searchedV : Allvehicles.OrderByDescending(o => o.Id).Take(4).ToList(),
+                Vehicles = renderSearch ? searchedV.Where(s => s.Status == StatusType.Published).ToList() : Allvehicles.OrderByDescending(o => o.Id).Take(4).ToList(),
                 MakeSearchList = Allvehicles.Select(m => m.Make).Distinct().ToList()
             }; 
 
